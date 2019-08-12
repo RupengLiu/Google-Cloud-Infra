@@ -1,7 +1,7 @@
 # Google-Cloud-Infra
 
 ## Table of contents
-* [About Cloud Computing in Google](/#about-cloud-computing-in-google)
+* [About Cloud Computing in Google](#about-cloud-computing-in-google)
 * [About Kurbenetes](#About Kurbenetes)
 * [About Security](#About Security)
 * [Identity and Access Management](#Identity and Access Management)
