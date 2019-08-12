@@ -47,8 +47,29 @@
 * Bigtable is actually the same database that powers many google's core services, including search, analytics, maps and gmail.
 #### Big Query
 ![image](https://user-images.githubusercontent.com/29927264/62813256-9f428480-babe-11e9-9b6f-07bfe835f845.png)
+* mainly built for data analysis, won't use it as datastore for an app
 #### Cloud Spanner
 ![image](https://user-images.githubusercontent.com/29927264/62813361-27288e80-babf-11e9-88f3-025d6de37ac5.png)
+* if cloud sql doesn't fit your requirement bc you need more horizontal scalability, consider using cloud spanner. It offers transactional consistency at a global scale, schemas, sql and automatic synchronous replication for high availability, and it can provide petabyte of capacity.
+* Use when have outgrown any relational database, are sharding your databases for throughput high performance, need transactional consistency, global data and strong consistency, or just want to consolidate your database. (financial applications and inventory applications) 
+#### Cloud Datastore 
+* is a horizontally scalable NoSql database, designed for application backends. 
+* to store structured data from app engine apps. 
+* automatically handle sharding, replication, providing you with a highly durable and available database that scales automatically to handle load. Unlike bigtable, it also offers transactions that affect multiple database rows and it lets you do sql-like queries
+
+![image](https://user-images.githubusercontent.com/29927264/62815385-3ca4b500-bacd-11e9-87d6-4e4dceaca6dc.png)
+* Datastore is the best for semi-structured application data that is used in App Engine's applications. 
+* Bigtable is best for analytical data with heavy/write events like ad tech, financial or loT data.
+* Cloud Storage is best for structured and unstructrued binary or object data like images, large media files, and backups.
+* Cloud Sql is best for web frameworks and existing applications like storing user credentials and customer orders.
+* Cloud spanner is best for large scale database applications that are larger than 2 TB (finacial trading)
+
+#### IaaS
+![image](https://user-images.githubusercontent.com/29927264/62880581-97632a00-bce2-11e9-887d-d5583dbab6ea.png)
+![image](https://user-images.githubusercontent.com/29927264/62881003-97175e80-bce3-11e9-8404-469dd3c863e7.png)
+![image](https://user-images.githubusercontent.com/29927264/62881547-df834c00-bce4-11e9-8dd0-c587aa29404e.png)
+![image](https://user-images.githubusercontent.com/29927264/62881702-3557f400-bce5-11e9-9dc2-8e868e9c8c21.png)
+* When using IaaS, as demand for your application increases, you have to copy an entire VM and boot the guest OS for each instance of your app, which can be slow and costly. With app engine, you can get access to programming services, so all you do is write your code in self-contained workloads that use these services and include any dependent libraries. As demand for you app increases, the platform scales your app seamlessly and independently by workload and infrustructure. This scale rapidly, but you won't be able to fine tune the underlying architecture to save cost. That's where containers come in. The idea of a container is to give you the independently scalability of workloads and an abstraction layer of the OS and hardware. What you get is an invisible box around your code and its dependencies with limited access to your own partition of the file system and hardware. It only requires a few system calls to create and starts as quickly as a process. All you need on each host is an OS kernel that supports container and container runtime. In essence, you're virtualizing the OS, it scales like paths, but gives you the nearly same flexibility as IaaS. With this abstraction, your code is ultra-portable and you can treat the OS and hardware as a black box. So you can go from development to staging to production, or from our laptop to the cloud without changing or rebuild anything. If you want to scale for example, a web server, you can do it in a second or hundreds of them, depending on the size of your workload, on a single host. Now, that's a simple exmaple of scaling one container, running a whole application on a single host. You likely want to build your application using lots of containers, each performing their own function like microservices. If you build them like this, and connect them with network connections, you can make them modular, deploy easily, and scale independently across a group of hosts. And the host can scale up or down and start and stop the containers on demand, as demand for your application changes or as host fails. A tool that helps you do this well is Kubernetes. Kubernetes makes it easy to orchestrate many containers on many hosts, scale them as microservices, and deploy rollouts and rollbacks.
 
 
 
