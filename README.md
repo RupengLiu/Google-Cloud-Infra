@@ -2,15 +2,11 @@
 
 ## Table of contents
 * [About Cloud Computing in Google](#about-cloud-computing-in-google)
-* [About Kurbenetes](#About Kurbenetes)
-* [About Security](#About Security)
-* [Identity and Access Management](#Identity and Access Management)
-* [Virtual Machines and Network in the cloud](#Virtual Machines and Network in the cloud)
-* [Storage in the cloud](#Storage in the cloud)
-* [Cloud SQL](#Cloud SQL)
-* [Big Table](#Big Table)
-* [Big Query](#Big Query)
-* [Cloud Spanner](#Cloud Spanner)
+* [About Kurbenetes](#about-kurbenetes)
+* [About Security](#about-security)
+* [Identity and Access Management](#identity-and-access-management)
+* [Virtual Machines and Network in the cloud](#virtual-machine-and-network-in-the-cloud)
+* [Storage in the cloud](#storage-in-the-cloud)
 * []
 * []
 * []
