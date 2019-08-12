@@ -8,8 +8,8 @@
 * [Virtual Machines and Network in the cloud](#virtual-machine-and-network-in-the-cloud)
 * [Storage in the cloud](#storage-in-the-cloud)
 * [Container](#container)
-* []
-* []
+* [Kubernetes](#kubernetes)
+* [App Engine](#app-engine)
 * []
 
 
@@ -84,6 +84,33 @@
 ![image](https://user-images.githubusercontent.com/29927264/62881547-df834c00-bce4-11e9-8dd0-c587aa29404e.png)
 ![image](https://user-images.githubusercontent.com/29927264/62881702-3557f400-bce5-11e9-9dc2-8e868e9c8c21.png)
 * When using IaaS, as demand for your application increases, you have to copy an entire VM and boot the guest OS for each instance of your app, which can be slow and costly. With app engine, you can get access to programming services, so all you do is write your code in self-contained workloads that use these services and include any dependent libraries. As demand for you app increases, the platform scales your app seamlessly and independently by workload and infrustructure. This scale rapidly, but you won't be able to fine tune the underlying architecture to save cost. That's where containers come in. The idea of a container is to give you the independently scalability of workloads and an abstraction layer of the OS and hardware. What you get is an invisible box around your code and its dependencies with limited access to your own partition of the file system and hardware. It only requires a few system calls to create and starts as quickly as a process. All you need on each host is an OS kernel that supports container and container runtime. In essence, you're virtualizing the OS, it scales like paths, but gives you the nearly same flexibility as IaaS. With this abstraction, your code is ultra-portable and you can treat the OS and hardware as a black box. So you can go from development to staging to production, or from our laptop to the cloud without changing or rebuild anything. If you want to scale for example, a web server, you can do it in a second or hundreds of them, depending on the size of your workload, on a single host. Now, that's a simple exmaple of scaling one container, running a whole application on a single host. You likely want to build your application using lots of containers, each performing their own function like microservices. If you build them like this, and connect them with network connections, you can make them modular, deploy easily, and scale independently across a group of hosts. And the host can scale up or down and start and stop the containers on demand, as demand for your application changes or as host fails. A tool that helps you do this well is Kubernetes. Kubernetes makes it easy to orchestrate many containers on many hosts, scale them as microservices, and deploy rollouts and rollbacks.
+
+
+### Kubernetes
+* Abstract containers at high level so you can better manage and scale your applications.
+![image](https://user-images.githubusercontent.com/29927264/62885382-971c5c00-bced-11e9-9748-b97ea481a6a3.png)
+
+
+### App Engine
+![image](https://user-images.githubusercontent.com/29927264/62885815-ab148d80-bcee-11e9-8a36-f588ff9f2639.png)
+* Especially suited for building scalable web applications and mobile backends
+#### App Engine Standard Env
+* Offers simpler deployment experience than the flexible environment and fine-grained auto scale and offer free daily usage quota. 
+* SDKs for development, testing and deployment
+* has specific version of Java, Python, PHP, and Go
+![image](https://user-images.githubusercontent.com/29927264/62886326-e2d00500-bcef-11e9-9856-d4ec7b83b348.png)
+![image](https://user-images.githubusercontent.com/29927264/62886649-638f0100-bcf0-11e9-8f16-53e3140ff4ac.png)
+![image](https://user-images.githubusercontent.com/29927264/62886762-a81a9c80-bcf0-11e9-8793-d6d1cbc1e695.png)
+
+#### App Engine Flexible
+![image](https://user-images.githubusercontent.com/29927264/62886847-d4361d80-bcf0-11e9-9586-3568399f820c.png)
+![image](https://user-images.githubusercontent.com/29927264/62887032-4575d080-bcf1-11e9-91bf-8544ba0066a0.png)
+![image](https://user-images.githubusercontent.com/29927264/62887136-879f1200-bcf1-11e9-883b-8c4407e33587.png)
+![image](https://user-images.githubusercontent.com/29927264/62888512-4d833f80-bcf4-11e9-871a-4d51f55f347a.png)
+![image](https://user-images.githubusercontent.com/29927264/62888578-70155880-bcf4-11e9-9d57-acc84f8a6c5c.png)
+![image](https://user-images.githubusercontent.com/29927264/62888745-caaeb480-bcf4-11e9-80c7-1486fe1675c3.png)
+
+
 
 
 
